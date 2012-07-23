@@ -12,6 +12,11 @@
         <module>dojo</module>
     </modules>
 
+    <properties>
+        <tapestry.version>5.3.3</tapestry.version>
+        <commons-lang.version>3.1</commons-lang.version>
+    </properties>
+
     <build>
         <pluginManagement>
             <plugins>
@@ -32,7 +37,27 @@
         <dependency>
             <groupId>org.apache.tapestry</groupId>
             <artifactId>tapestry-core</artifactId>
-            <version>5.3.3</version>
+            <version>${tapestry.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>log4j</artifactId>
+                    <groupId>log4j</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

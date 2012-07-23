@@ -8,4 +8,11 @@
     </parent>
     <artifactId>tapestry5-dojo</artifactId>
     <name>Tapestry 5 Dojo plugin</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+    </dependencies>
 </project>

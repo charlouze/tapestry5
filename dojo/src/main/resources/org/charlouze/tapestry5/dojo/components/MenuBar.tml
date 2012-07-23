@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+    xmlns:p="tapestry:parameter" id="${clientId}">
+    <div data-dojo-type="dijit.MenuBar"  id="${clientId}_MB">
+        <t:loop source="source" value="barItem" >
+            <div data-dojo-type="dijit.PopupMenuBarItem" data-dojo-props="${barItem.dojoProps}">
+                <span>${barItem.label}</span>
+                <div t:type="if" test="barItem.hasChildren()" data-dojo-type="dijit.DropDownMenu" id="serviceMenu">
+                    <t:loop source="barItem.items" value="item">
+                        <div data-dojo-type="dijit.MenuItem" data-dojo-props="${item.dojoProps}">${item.label}</div>
+                    </t:loop>
+                </div>
+            </div>
+        </t:loop>
+    </div>
+</div>
